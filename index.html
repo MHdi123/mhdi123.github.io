@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری راد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-header desktop-header">
+        <div class="header-right">
+            <div class="header-logo">
+                <i class="fas fa-gem"></i>
+                <span>گالری راد</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">صفحه اصلی</a></li>
+                    <li><a href="#latest-articles-section">مقالات</a></li>
+                    <li><a href="#popular-products-section">محصولات</a></li> 
+                    <li><a href="#about-section">درباره ما</a></li> </ul>
+            </nav>
+        </div>
+        <div class="header-left">
+            <div class="header-search">
+                <input type="text" placeholder="جستجو...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="header-contact">
+                <i class="fas fa-phone-alt"></i>
+                <span dir="ltr">۰۹۲۰۴۵۸۶۹۹</span>
+            </div>
+            <div class="header-account" id="desktop-header-account">
+                <i class="fas fa-user user-icon"></i>
+                <span class="user-display-name" id="desktop-user-display">ثبت نام</span>
+                <ul class="user-dropdown-menu" id="desktop-user-dropdown-menu">
+                    <li><a href="#" id="desktop-settings-link"><i class="fas fa-cog"></i> <span>تنظیمات</span></a></li>
+                    <li><a href="#" id="desktop-shopping-cart-link"><i class="fas fa-shopping-cart"></i> <span>سبد خرید</span></a></li>
+                    <li><a href="#" id="desktop-logout-link"><i class="fas fa-sign-out-alt"></i> <span>خروج از حساب کاربری</span></a></li>
+                </ul>
+            </div>
+            <div class="header-categories-dropdown" id="header-categories-dropdown">
+                <span class="dropdown-toggle">دسته‌بندی</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                <ul class="dropdown-menu-categories">
+                    <li><a href="#">گردنبند</a></li>
+                    <li><a href="#">گوشواره</a></li>
+                    <li><a href="#">انگشتر</a></li>
+                    <li><a href="#">دستبند</a></li>
+                    <li><a href="#">ساعت</a></li>
+                    <li><a href="#">ست و نیم‌ست</a></li>
+                </ul>
+            </div>
+            </div>
+    </header>
+
+    <header class="mobile-header">
+        <div class="mobile-header-left">
+            <button class="hamburger-menu-toggle" id="hamburger-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header-logo">
+                <i class="fas fa-gem"></i>
+                <span>گالری راد</span>
+            </div>
+        </div>
+        <div class="mobile-header-right">
+            <div class="header-account mobile-account" id="mobile-header-account">
+                <i class="fas fa-user user-icon"></i>
+                <span class="user-display-name" id="mobile-user-display"></span>
+                <ul class="user-dropdown-menu" id="mobile-user-dropdown-menu">
+                    <li><a href="#" id="mobile-settings-link"><i class="fas fa-cog"></i> <span>تنظیمات</span></a></li>
+                    <li><a href="#" id="mobile-shopping-cart-link"><i class="fas fa-shopping-cart"></i> <span>سبد خرید</span></a></li>
+                    <li><a href="#" id="mobile-logout-link"><i class="fas fa-sign-out-alt"></i> <span>خروج از حساب کاربری</span></a></li>
+                </ul>
+            </div>
+            <div class="header-cart">
+                 <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                <i class="fas fa-gem">  گالری راد</i>
+            </h5>
+            <button class="offcanvas-close-btn" id="offcanvas-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="offcanvas-nav-list">
+                <li><a href="#" class="active">صفحه اصلی</a></li>
+                <li><a href="#latest-articles-section">مقالات</a></li>
+                <li><a href="#popular-products-section">محصولات</a></li> 
+                <li><a href="#about-section">درباره ما</a></li> </ul>
+            <div class="offcanvas-search">
+                <input type="text" placeholder="جستجو...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="offcanvas-contact">
+                <i class="fas fa-phone-alt"></i>
+                <span dir="ltr">۰۹۲۰۴۵۸۶۹۹</span>
+            </div>
+            <hr class="offcanvas-hr">
+            <h6 class="offcanvas-subtitle">دسته‌بندی‌ها</h6>
+            <div class="category-list-offcanvas">
+                <div class="category-item">
+                    <i class="fas fa-ring"></i>
+                    <span>انگشتر</span>
+                </div>
+                <div class="category-item">
+
+                    <span>گردنبند</span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-earrings"></i>
+                    <span>گوشواره</span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <span>دستبند</span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-clock"></i>
+                    <span>ساعت</span>
+                </div>
+                 <div class="category-item">
+                    <i class="fas fa-gift"></i>
+                    <span>ست و نیم‌ست</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-overlay" id="offcanvas-overlay"></div>
+
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>خرید آسان و مطمئن انواع جواهرات طلا</h1>
+                <h2>گوشواره، انگشتر، گردنبند، دستبند، سرویس، نیم ست</h2>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد.</p>
+                <button class="hero-button">مشاهده محصولات</button>
+            </div>
+            <div class="hero-image">
+                <img src="./png/1.png" alt="دستبند طلا">
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="product-categories-section">
+            <h3>دسته‌بندی محصولات</h3>
+            <div class="category-list-horizontal">
+                <div class="category-item">
+                    <i class="fas fa-gem"></i>
+                    <span>گردنبند</span>
+                </div>
+                <div class="category-item active">
+                    <i class="fas fa-earrings"></i>
+                    <span>گوشواره</span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-ring"></i>
+                    <span>انگشتر</span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <span>دستبند</span>
+                </div>
+                <div class="category-item">
+                    <i class="fas fa-clock"></i>
+                    <span>ساعت</span>
+                </div>
+                 <div class="category-item">
+                    <i class="fas fa-gift"></i>
+                    <span>ست</span>
+                </div>
+                 <div class="category-item">
+                    <i class="fas fa-star"></i>
+                    <span>نیم‌ست</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="amazing-offers-section">
+            <div class="section-header">
+                <h2>پیشنهادهای شگفت‌انگیز</h2>
+                <div class="header-controls">
+                    <a href="#" class="view-all">مشاهده همه</a>
+                    <div class="slider-nav-arrows">
+                        <button class="slider-arrow left" id="amazing-offers-arrow-left"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-arrow right" id="amazing-offers-arrow-right"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="amazing-offers-grid" id="amazing-offers-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Necklace+1" alt="گردنبند بی‌نهایت">
+                    <h4>گردنبند طلا طرح بی‌نهایت</h4>
+                    <div class="product-price">
+                        <span class="old-price">۴,۲۰۰,۰۰۰ تومان</span>
+                        <span class="current-price">۳,۸۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Plaque+Heart" alt="پلاک طلا طرح قلب">
+                    <h4>پلاک طلا طرح قلب</h4>
+                    <div class="product-price">
+                        <span class="old-price">۳,۷۰۰,۰۰۰ تومان</span>
+                        <span class="current-price">۳,۰۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Service+365" alt="سرویس طلا مدل ۳۶۵">
+                    <h4>سرویس طلا مدل ۳۶۵</h4>
+                    <div class="product-price">
+                        <span class="old-price">۸,۰۰۰,۰۰۰ تومان</span>
+                        <span class="current-price">۷,۴۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Ring+110" alt="انگشتر طلا مدل ۱۱۰">
+                    <h4>انگشتر طلا مدل ۱۱۰</h4>
+                    <div class="product-price">
+                        <span class="old-price">۳,۷۰۰,۰۰۰ تومان</span>
+                        <span class="current-price">۳,۳۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="special-offer-card">
+                    <span class="badge">فروش ویژه</span>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    <div class="countdown" id="countdown-timer">
+                        <div class="countdown-item"><span id="days">27</span><span>روز</span></div>
+                        <div class="countdown-item"><span id="hours">17</span><span>ساعت</span></div>
+                        <div class="countdown-item"><span id="minutes">40</span><span>دقیقه</span></div>
+                        <div class="countdown-item"><span id="seconds">30</span><span>ثانیه</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about-section"> <div class="about-image">
+                <img src="./png/2.png" alt="ست جواهرات">
+            </div>
+            <div class="about-content">
+                <h2>درباره گالری راد</h2>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد. کتاب‌های زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می‌طلبد تا با نرم افزارهای گوناگون شناخت. پیشرو در زبان فارسی ایجاد کرد.</p>
+                <button class="learn-more-button">بیشتر بدانید</button>
+            </div>
+        </section>
+
+        <section class="popular-products-section" id="popular-products-section"> <div class="section-header">
+                <h2>پرفروش‌ترین محصولات</h2>
+                <div class="header-controls">
+                    <a href="#" class="view-all">مشاهده همه</a>
+                    <div class="slider-nav-arrows">
+                        <button class="slider-arrow left" id="popular-products-arrow-left"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-arrow right" id="popular-products-arrow-right"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular-products-grid" id="popular-products-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Band+72" alt="دستبند طلا مدل ۷۲">
+                    <h4>دستبند طلا مدل ۷۲</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Band+65" alt="دستبند طلا مدل ۶۵">
+                    <h4>دستبند طلا مدل ۶۵</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۶۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Necklace+Angel" alt="گردنبند طلا طرح فرشته">
+                    <h4>گردنبند طلا طرح فرشته</h4>
+                    <div class="product-price">
+                        <span class="current-price">۳,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Ring+110" alt="انگشتر طلا مدل ۱۱۰">
+                    <h4>انگشتر طلا مدل ۱۱۰</h4>
+                    <div class="product-price">
+                        <span class="current-price">۳,۳۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Necklace+29" alt="گردنبند طلا مدل ۲۹">
+                    <h4>گردنبند طلا مدل ۲۹</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="baroque-gold-section">
+            <div class="baroque-content">
+                <h2>سرویس طلا باروک</h2>
+                <p>مروارید باروک یکی از جذاب‌ترین زیورآلات است که طرفداران زیادی در میان افراد به خصوص بانوان جوان پیدا کرده است. با توجه به زیبایی منحصر بفرد مروارید باروک جای تعجب نیست اگر سرویس مروارید باروک را یک مدل سرویس طلا پرطرفدار معرفی کنیم. باروک در حقیقت مرواریدهای نامتقارن در اندازه و شکل‌های متفاوت هستند که در طراحی و ساخت انواع زیورآلات کاربرد دارند. <span>سرویس طلا باروک نیز در گروه زیباترین و پرطرفدارترین سرویس‌های طلا است</span> که از یک گردنبند، دستبند، انگشتر و گوشواره تشکیل شده است. همچنین نیم ست طلا باروک نیز از دو یا سه قطعه از این زیورآلات تشکیل شده است.</p>
+            </div>
+            <div class="baroque-image">
+                <img src="./png/display-shiny-elegant-gold-chain.jpg" alt="سرویس طلا باروک">
+            </div>
+        </section>
+        
+        <section class="newest-products-section">
+            <div class="section-header">
+                <h2>جدیدترین محصولات</h2>
+                <div class="header-controls">
+                    <a href="#" class="view-all">مشاهده همه</a>
+                    <div class="slider-nav-arrows">
+                        <button class="slider-arrow left" id="newest-products-arrow-left"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-arrow right" id="newest-products-arrow-right"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newest-products-grid" id="newest-products-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Earrings+Flower" alt="گوشواره طلا طرح گل">
+                    <h4>گوشواره طلا طرح گل</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Service+Butterfly" alt="سرویس پروانه">
+                    <h4>سرویس طلا پروانه</h4>
+                    <div class="product-price">
+                        <span class="current-price">۴,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Earrings+M2" alt="گوشواره طلا مدل M3">
+                    <h4>گوشواره طلا مدل M3</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۴۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Ring+Set+11" alt="حلقه ست مدل ۱۱">
+                    <h4>حلقه ست مدل ۱۱</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150x150/F7E7CD/333?text=Bracelet+10" alt="دستبند مدل ۱۰">
+                    <h4>دستبند مدل ۱۰</h4>
+                    <div class="product-price">
+                        <span class="current-price">۲,۷۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <button class="add-to-cart"><i class="fas fa-shopping-basket"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h3>برای دریافت آخرین خبرها و تخفیف‌های جدید ایمیل خود را وارد کنید.</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="ایمیل شما">
+                    <button>ثبت</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="instagram-section">
+            <div class="instagram-header">
+                <div class="instagram-text">
+                    <h2>ما را در اینستاگرام دنبال کن!</h2>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                </div>
+                <button class="instagram-button">مشاهده اینستاگرام</button>
+            </div>
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="https://via.placeholder.com/200x200/333/F7E7CD?text=Insta+1" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://via.placeholder.com/200x200/333/F7E7CD?text=Insta+2" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://via.placeholder.com/200x200/333/F7E7CD?text=Insta+3" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://via.placeholder.com/200x200/333/F7E7CD?text=Insta+4" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="installment-gold-section">
+            <div class="installment-image">
+                <img src="./png/luxurious-shiny-golden-chain.png" alt="خرید طلا قسطی">
+            </div>
+            <div class="installment-content">
+                <h2>خرید طلا قسطی بدون پیش پرداخت</h2>
+                <p>شما می‌توانید طلای مورد نظرتان را به صورت قسطی خریداری کنید! برای تحقق رویای خودتان، مجموعه گالری راد به پشتوانه بیش از ۲۰ سال تلاش توانسته امکان خرید طلا به صورت قسطی را بدون واسطه با شرکت‌های اعتباری، برای شما عزیزان به صورت مستقیم فراهم کند.</p>
+                <button class="view-article-button">مشاهده مقاله</button>
+            </div>
+        </section>
+
+        <section class="user-reviews-section">
+            <h3>نظرات کاربران</h3>
+            <div class="user-reviews-grid">
+                <div class="user-review-card">
+                    <div class="user-info">
+                        <img src="./png/icons8-user-100.png" alt="Raha Ahmadi Profile">
+                        <div class="user-details">
+                            <h4>رضا احمدی</h4>
+                            <span>۲۷ مهر، ۱۶:۳۰</span>
+                        </div>
+                    </div>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد.</p>
+                </div>
+
+                <div class="user-review-card">
+                    <div class="user-info">
+                        <img src="./png/icons8-businesswoman-100.png" alt="Mina Rahmati Profile">
+                        <div class="user-details">
+                            <h4>مینا رحمتی</h4>
+                            <span>۲۷ مهر، ۱۶:۴۵</span>
+                        </div>
+                    </div>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای ...</p>
+                </div>
+
+                <div class="user-review-card">
+                    <div class="user-info">
+                        <img src="./png/icons8-userwoman-100 .png" alt="Mina Karimi Profile">
+                        <div class="user-details">
+                            <h4>مینا کریمی</h4>
+                            <span>۲۷ مهر، ۱۶:۴۸</span>
+                        </div>
+                    </div>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="faq-intro">
+                <h2>سوالات متداول</h2>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد. کتاب‌های زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می‌طلبد تا با نرم افزارهای گوناگون شناخت. پیشرو در زبان فارسی ایجاد کرد.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-articles-section" id="latest-articles-section"> <h2>آخرین مقالات</h2>
+            <div class="articles-grid">
+                <a href="#latest-articles-section" class="article-card"> <img src="https://via.placeholder.com/300x200/F7E7CD/333?text=Article+1" alt="Article Thumbnail">
+                    <h4>عنوان مقاله اول در اینجا قرار می گیرد</h4>
+                    <span>۲۴ مهر، ۱۴:۳۰</span>
+                </a>
+                <a href="#latest-articles-section" class="article-card"> <img src="https://via.placeholder.com/300x200/F7E7CD/333?text=Article+2" alt="Article Thumbnail">
+                    <h4>عنوان مقاله دوم در اینجا قرار می گیرد</h4>
+                    <span>۲۴ مهر، ۱۵:۰۰</span>
+                </a>
+                <a href="#latest-articles-section" class="article-card"> <img src="https://via.placeholder.com/300x200/F7E7CD/333?text=Article+3" alt="Article Thumbnail">
+                    <h4>عنوان مقاله سوم در اینجا قرار می گیرد</h4>
+                    <span>۲۴ مهر، ۱۵:۴۵</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-top-bar">
+            <div class="footer-value-prop">
+                <i class="fas fa-undo-alt"></i>
+                <span>تضمین برگشت وجه</span>
+            </div>
+            <div class="footer-value-prop">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>امکان پرداخت در محل</span>
+            </div>
+            <div class="footer-value-prop">
+                <i class="fas fa-headphones-alt"></i>
+                <span>پشتیبانی ۲۴ ساعته، ۷ روز هفته</span>
+            </div>
+            <div class="footer-value-prop">
+                <i class="fas fa-truck"></i>
+                <span>ارسال سریع به سراسر کشور</span>
+            </div>
+        </div>
+        <div class="footer-main-content">
+            <div class="footer-column">
+                <h4>راه‌های ارتباطی</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-envelope"></i> example@email.com</a></li>
+                    <li><a href="#"><i class="fas fa-phone-alt"></i> ۰۹۲۰۴۵۸۶۹۹</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> واتساپ ثبت سفارش</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>دسترسی سریع</h4>
+                <ul>
+                    <li><a href="#">صفحه اصلی</a></li>
+                <li><a href="#latest-articles-section">مقالات</a></li>
+                <li><a href="#popular-products-section">محصولات</a></li> 
+                <li><a href="#about-section">درباره ما</a></li> </ul>
+                </ul>
+            </div>
+            <div class="footer-column footer-gallery-logo">
+                <div class="header-logo">
+                    <i class="fas fa-gem"></i>
+                    <span>گالری راد</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <span>© ۲۰۲۴ گالری راد. تمامی حقوق محفوظ است.</span>
+        </div>
+    </footer>
+
+
+    <div class="floating-cart">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+<style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align to start for scrolling content */
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, var(--light-gray), #e8e8e8);
+            padding: 20px;
+            text-align: center;
+            font-family: 'Vazirmatn', sans-serif;
+            color: var(--text-color);
+        }
+        .admin-panel {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            width: 100%;
+            max-width: 800px; /* Wider for admin content */
+            margin-bottom: 30px; /* Space from bottom */
+        }
+        .admin-panel h1 {
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        .admin-panel .welcome-message {
+            font-size: 18px;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+        }
+        .admin-panel .back-button {
+            padding: 12px 25px;
+            background-color: var(--dark-gray);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .admin-panel .back-button:hover {
+            background-color: var(--medium-gray);
+            transform: translateY(-2px);
+        }
+
+        /* Admin Dashboard Tabs */
+        .admin-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--light-gray);
+            width: 100%;
+        }
+        .admin-tabs button {
+            background-color: transparent;
+            border: none;
+            padding: 15px 25px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--medium-gray);
+            cursor: pointer;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            border-bottom: 2px solid transparent;
+            margin: 0 10px;
+        }
+        .admin-tabs button.active {
+            color: var(--primary-gold);
+            border-bottom-color: var(--primary-gold);
+        }
+        .admin-tabs button:hover {
+            color: var(--dark-gray);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none; /* Hidden by default */
+            padding: 20px 0;
+            width: 100%;
+            text-align: right;
+        }
+        .tab-content.active {
+            display: block; /* Show active tab */
+        }
+
+        .tab-content h2 {
+            color: var(--dark-gray);
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Form Styles for Admin Panel */
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            background-color: var(--f5f5f5); /* Use a very light background for forms */
+        }
+        .form-group-admin {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            gap: 8px;
+        }
+        .form-group-admin label {
+            font-size: 16px;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+        .form-group-admin input[type="text"],
+        .form-group-admin input[type="number"],
+        .form-group-admin input[type="file"],
+        .form-group-admin textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--white);
+            color: var(--text-color);
+        }
+        .form-group-admin input:focus,
+        .form-group-admin textarea:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        .form-group-admin textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .admin-form button {
+            align-self: flex-end; /* Align button to the right in RTL */
+            padding: 12px 25px;
+            background-color: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+        .admin-form button:hover {
+            background-color: #c09f2f;
+            transform: translateY(-2px);
+        }
+
+        .message { /* Reusing message style from login.html */
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            display: none;
+            text-align: center;
+        }
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Product List for Price Change */
+        .product-list-admin {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            padding: 10px;
+            background-color: var(--f5f5f5);
+        }
+        .product-list-admin-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            font-size: 15px;
+            color: var(--dark-gray);
+        }
+        .product-list-admin-item span:first-child {
+            font-weight: 600;
+            flex-grow: 1;
+            text-align: right;
+        }
+        .product-list-admin-item span:last-child {
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-right: 15px;
+        }
+        .product-list-admin-item button {
+            background-color: var(--primary-gold);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background-color 0.2s ease;
+        }
+        .product-list-admin-item button:hover {
+            background-color: #c09f2f;
+        }
+
+
+        /* Responsive for Admin Panel */
+        @media (max-width: 768px) {
+            .admin-panel {
+                padding: 20px;
+                margin: 15px;
+            }
+            .admin-panel h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+            .admin-panel .welcome-message {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            .admin-tabs {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .admin-tabs button {
+                width: 100%;
+                padding: 12px 0;
+                margin: 5px 0;
+            }
+            .tab-content h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .admin-form {
+                padding: 15px;
+            }
+            .form-group-admin label, .form-group-admin input, .form-group-admin textarea {
+                font-size: 14px;
+            }
+            .admin-form button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .admin-panel {
+                padding: 15px;
+                margin: 10px;
+            }
+            .admin-panel h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-panel">
+        <h1>پنل مدیریت</h1>
+        <p class="welcome-message">به بخش مدیریت سایت گالری راد خوش آمدید.</p>
+        <a href="index.html" class="back-button">بازگشت به صفحه اصلی</a>
+
+        <div class="admin-tabs">
+            <button id="manage-prices-tab" class="active">مدیریت قیمت‌ها</button>
+            <button id="add-article-tab">افزودن مقاله</button>
+        </div>
+
+        <div id="manage-prices-content" class="tab-content active">
+            <h2>مدیریت قیمت محصولات </h2>
+            <div id="price-message-area" class="message"></div>
+            
+                <div class="form-group-admin">
+                    <label for="product-name-select">انتخاب محصول:</label>
+                    <select id="product-name-select" style="width: 100%; padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Vazirmatn', sans-serif; font-size: 15px; outline: none; background-color: var(--white); color: var(--text-color);">
+                        <option value="Necklace+1">گردنبند طلا طرح بی‌نهایت</option>
+                        <option value="Plaque+Heart">پلاک طلا طرح قلب</option>
+                        <option value="Service+365">سرویس طلا مدل ۳۶۵</option>
+                        <option value="Ring+110">انگشتر طلا مدل ۱۱۰</option>
+                        <option value="Band+72">دستبند طلا مدل ۷۲</option>
+                        <option value="Band+65">دستبند طلا مدل ۶۵</option>
+                        <option value="Necklace+Angel">گردنبند طلا طرح فرشته</option>
+                        <option value="Earrings+Flower">گوشواره طلا طرح گل</option>
+                        <option value="Service+Butterfly">سرویس طلا پروانه</option>
+                        <option value="Earrings+M2">گوشواره طلا مدل M3</option>
+                        <option value="Ring+Set+11">حلقه ست مدل ۱۱</option>
+                        <option value="Bracelet+10">دستبند مدل ۱۰</option>
+                    </select>
+                </div>
+                <div class="form-group-admin">
+                    <label for="new-price-input">قیمت جدید (تومان):</label>
+                    <input type="number" id="new-price-input" placeholder="قیمت جدید را وارد کنید" required>
+                </div>
+                <button id="update-price-button">به‌روزرسانی قیمت</button>
+            </div>
+
+            <h3 style="text-align: center; margin-top: 30px; margin-bottom: 20px; color: var(--dark-gray);">لیست فعلی محصولات و قیمت‌ها</h3>
+            <div id="current-products-list" class="product-list-admin">
+                </div>
+        </div>
+
+        <div id="add-article-content" class="tab-content">
+            <h2>افزودن مقاله جدید (شبیه‌سازی)</h2>
+            <div id="article-message-area" class="message"></div>
+            <form id="add-article-form" class="admin-form">
+                <p style="text-align: center; color: var(--medium-gray); font-size: 14px; margin-bottom: 10px;">
+                    (توجه: این یک شبیه‌سازی فرانت‌اند است. مقالات به صورت دائمی ذخیره نمی‌شوند.)
+                </p>
+                <div class="form-group-admin">
+                    <label for="article-title">عنوان مقاله:</label>
+                    <input type="text" id="article-title" placeholder="عنوان مقاله را وارد کنید" required>
+                </div>
+                <div class="form-group-admin">
+                    <label for="article-image-url">آدرس تصویر مقاله (URL):</label>
+                    <input type="text" id="article-image-url" placeholder="مثال: https://via.placeholder.com/300x200" required>
+                </div>
+                 <div class="form-group-admin">
+                    <label for="article-date">تاریخ (مثال: ۲۴ مهر، ۱۵:۰۰):</label>
+                    <input type="text" id="article-date" placeholder="مثال: ۲۴ مهر، ۱۵:۰۰" required>
+                </div>
+                <div class="form-group-admin">
+                    <label for="article-content">متن مقاله:</label>
+                    <textarea id="article-content" placeholder="متن کامل مقاله را وارد کنید..." required></textarea>
+                </div>
+                <button type="submit">افزودن مقاله</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>
